@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>X-Code Academy</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: white;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: #000;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      margin: 0;
+      color: #00d8ff;
+      animation: pulse 2s infinite;
+    }
+    header a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    .hero {
+      padding: 3rem 2rem;
+      text-align: center;
+      background: url('https://www.transparenttextures.com/patterns/stardust.png');
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      color: #00d8ff;
+      animation: slideIn 1.5s ease-out;
+    }
+
+    .section {
+      padding: 2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .section h3 {
+      color: #00ffc6;
+    }
+
+    ul {
+      line-height: 2;
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li::before {
+      content: "✅ ";
+      color: #0f0;
+    }
+
+    .form {
+      background: #111;
+      padding: 2rem;
+      border-radius: 10px;
+      max-width: 500px;
+      margin: auto;
+    }
+
+    input, textarea, button {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border-radius: 5px;
+      border: none;
+      font-size: 1rem;
+    }
+
+    button {
+      background-color: #00d8ff;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #00b7d3;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #000;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @media (max-width: 600px) {
+      .hero h2 { font-size: 1.8rem; }
+      .form { padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>X-Code Academy</h1>
+    <a href="mailto:xcodeacadmey@gmail.com">📧 xcodeacadmey@gmail.com</a>
+  </header>
+
+  <section class="hero">
+    <h2>Level Up Your IT Career with X-Code Academy!</h2>
+    <p>Join the top programs with job support, real-time projects, and expert trainers!</p>
+  </section>
+
+  <section class="section">
+    <h3>🌩️ Cloud Platforms:</h3>
+    <ul>
+      <li>Microsoft Azure</li>
+      <li>Amazon AWS</li>
+      <li>Google Cloud Platform (GCP)</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h3>💻 Programming & Development:</h3>
+    <ul>
+      <li>Python - Automation, APIs & Data Science</li>
+      <li>Java - Backend Development & Enterprise Applications</li>
+      <li>.NET - Full Stack Web Development (C# | ASP.NET | MVC)</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h3>📚 SAP Modules:</h3>
+    <ul>
+      <li>SAP FICO, MM, ABAP, SD & more</li>
+      <li>Learn from certified consultants!</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h3>🧪 Software Testing:</h3>
+    <ul>
+      <li>Manual & Automation Testing</li>
+      <li>Tools: Selenium, Postman, JMeter, NG & more</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h3>💼 Job Support Available:</h3>
+    <ul>
+      <li>Daily Support</li>
+      <li>Proxy Assistance</li>
+      <li>Real-time Project Help</li>
+      <li>Task Troubleshooting</li>
+      <li>Interview Support</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h3>📞 Contact Us</h3>
+    <p><strong>Phone:</strong> +91-9440757845</p>
+    <p><strong>Email:</strong> xcodeacadmey@gmail.com</p>
+    <p><strong>Availability:</strong> Worldwide | Flexible Timings</p>
+  </section>
+
+  <section class="section form">
+    <h3>📩 Enquiry Form</h3>
+    <form onsubmit="return sendToWhatsApp()">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="text" id="course" placeholder="Course Interested In" required />
+      <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit">Send to WhatsApp</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2020 X-Code Academy. All rights reserved.
+  </footer>
+
+  <script>
+    function sendToWhatsApp() {
+      const name = document.getElementById("name").value;
+      const course = document.getElementById("course").value;
+      const message = document.getElementById("message").value;
+
+      const text = `Hello, I'm ${name}. I am interested in ${course}. Message: ${message}`;
+      const phone = "+919440757845";
+      const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+
+      window.open(url, '_blank');
+      return false; // Prevent actual form submission
+    }
+  </script>
+</body>
+</html>
